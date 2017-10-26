@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 $this->title = 'My Yii Application';
 ?>
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+ <a href="<?php Yii::$app->homeUrl ?>" >asdasddsa</a>
 <div class="site-index">
 <div class="row" >
     <div class="col-md-6">

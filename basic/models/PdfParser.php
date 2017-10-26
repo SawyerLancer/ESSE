@@ -43,6 +43,7 @@ class PdfParser extends Model
        $parser = new \Smalot\PdfParser\Parser();
        $pdf= $parser->parseFile($file);
        $text=$pdf->getText();
+
       // $this->DelFile($file);
        return $text;
    }
@@ -79,10 +80,16 @@ class PdfParser extends Model
 
    }
 
-   public function WordLight($word,$text,$replacment='<span style="color: skyblue">\'.$word.\'</span>\'')
+
+
+   public function WordLight($TextFind,$text,$replacment='<span style="color: skyblue">\'.$word.\'</span>\'')
    {
-       return preg_replace('/'.$word.'/','<span style="color: skyblue">'.$word.'</span>',$text);
-   }
+      /* $Words=explode(" ",$TextFind);
+       foreach  ($Words as $Word) {*/
+           return preg_replace('/' . $TextFind . '/', '<span style="background:blue">' . $TextFind . '</span>', $text);
+       /*}
+       return $TEXT;*/
+       }
    public function WordCol($text)
    {
        $mathes=$this->FindWord($text);

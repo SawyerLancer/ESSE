@@ -63,7 +63,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = new PdfParser();
+       /* $model = new PdfParser();
 
         if(Yii::$app->request->isPost){
             $model->file= UploadedFile::getInstance($model,'file');
@@ -71,13 +71,13 @@ class SiteController extends Controller
             if ($model->upload()){
                  //$data=$model->ParserPdf($model->file);
                 $DataTeacher=$model->ParserPdf($model->FileTeacher);
-                $data=$model->WordLight("F",$model->ParserPdf($model->file));
+                $data=$model->WordLight("ПАСПОРТ",$model->ParserPdf($model->file));
 
                // $model->WordCol($model->ParserPdf($model->file));
             }
-        }
+        }*/
 
-        return $this->render('index',['model'=>$model,'data'=>$data,'DataTeacher'=>$DataTeacher]);
+        return $this->render('IndexLogin'/*,['model'=>$model,'data'=>$data,'DataTeacher'=>$DataTeacher]*/);
     }
 
     /**
